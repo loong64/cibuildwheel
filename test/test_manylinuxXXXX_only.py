@@ -66,6 +66,7 @@ project_with_manylinux_symbols = test_projects.new_c_project(
         "manylinux_2_24",
         "manylinux_2_28",
         "manylinux_2_34",
+        "manylinux_2_38",
     ],
 )
 @pytest.mark.usefixtures("docker_cleanup")
@@ -75,7 +76,7 @@ def test(manylinux_image, tmp_path):
     elif platform.machine() not in {"x86_64", "i686"}:
         if manylinux_image in {"manylinux1", "manylinux2010"}:
             pytest.skip(f"{manylinux_image} doesn't exist for non-x86 architectures")
-    elif manylinux_image in {"manylinux_2_28", "manylinux_2_34"} and platform.machine() == "i686":
+    elif manylinux_image in {"manylinux_2_28", "manylinux_2_34", "manylinux_2_38"} and platform.machine() == "i686":
         pytest.skip(f"{manylinux_image} doesn't exist for i686 architecture")
 
     project_dir = tmp_path / "project"
@@ -93,6 +94,7 @@ def test(manylinux_image, tmp_path):
         "CIBW_MANYLINUX_AARCH64_IMAGE": manylinux_image,
         "CIBW_MANYLINUX_PPC64LE_IMAGE": manylinux_image,
         "CIBW_MANYLINUX_S390X_IMAGE": manylinux_image,
+        "CIBW_MANYLINUX_LOONGARCH64_IMAGE": manylinux_image,
         "CIBW_MANYLINUX_PYPY_AARCH64_IMAGE": manylinux_image,
         "CIBW_MANYLINUX_PYPY_I686_IMAGE": manylinux_image,
     }
@@ -105,7 +107,7 @@ def test(manylinux_image, tmp_path):
     if manylinux_image in {"manylinux_2_24"}:
         # We don't have a manylinux_2_24 image for PyPy 3.10+, CPython 3.12+
         add_env["CIBW_SKIP"] = "pp31* cp312* cp313*"
-    if manylinux_image in {"manylinux_2_28", "manylinux_2_34"} and platform.machine() == "x86_64":
+    if manylinux_image in {"manylinux_2_28", "manylinux_2_34", "manylinux_2_38"} and platform.machine() == "x86_64":
         # We don't have a manylinux_2_28+ image for i686
         add_env["CIBW_ARCHS"] = "x86_64"
 
@@ -146,7 +148,7 @@ def test(manylinux_image, tmp_path):
             if "-pp31" not in w and "-cp312" not in w and "-cp313" not in w
         ]
 
-    if manylinux_image in {"manylinux_2_28", "manylinux_2_34"} and platform.machine() == "x86_64":
+    if manylinux_image in {"manylinux_2_28", "manylinux_2_34", "manylinux_2_38"} and platform.machine() == "x86_64":
         # We don't have a manylinux_2_28+ image for i686
         expected_wheels = [w for w in expected_wheels if "i686" not in w]
 

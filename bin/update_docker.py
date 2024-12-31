@@ -70,6 +70,8 @@ images = [
     PyPAImage("manylinux_2_34", "s390x", None),
     PyPAImage("manylinux_2_34", "pypy_x86_64", None),
     PyPAImage("manylinux_2_34", "pypy_aarch64", None),
+    # manylinux_2_38 images
+    PyPAImage("manylinux_2_38", "loongarch64", None),
     # musllinux_1_1 images, EOL -> use tag
     PyPAImage("musllinux_1_1", "x86_64", "2024.10.26-1"),
     PyPAImage("musllinux_1_1", "i686", "2024.10.26-1"),
@@ -83,6 +85,7 @@ images = [
     PyPAImage("musllinux_1_2", "ppc64le", None),
     PyPAImage("musllinux_1_2", "s390x", None),
     PyPAImage("musllinux_1_2", "armv7l", None),
+    PyPAImage("musllinux_1_2", "loongarch64", None),
 ]
 
 config = configparser.ConfigParser()
