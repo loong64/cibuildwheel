@@ -38,6 +38,7 @@ class Architecture(Enum):
     ppc64le = "ppc64le"
     s390x = "s390x"
     armv7l = "armv7l"
+    loongarch64 = "loongarch64"
 
     # mac archs
     universal2 = "universal2"
@@ -134,6 +135,7 @@ class Architecture(Enum):
                 Architecture.ppc64le,
                 Architecture.s390x,
                 Architecture.armv7l,
+                Architecture.loongarch64,
             },
             "macos": {Architecture.x86_64, Architecture.arm64, Architecture.universal2},
             "windows": {Architecture.x86, Architecture.AMD64, Architecture.ARM64},

@@ -86,6 +86,7 @@ MANYLINUX_ARCHS: Final[tuple[str, ...]] = (
     "ppc64le",
     "s390x",
     "armv7l",
+    "loongarch64",
     "pypy_aarch64",
     "pypy_i686",
 )
@@ -97,6 +98,7 @@ MUSLLINUX_ARCHS: Final[tuple[str, ...]] = (
     "ppc64le",
     "s390x",
     "armv7l",
+    "loongarch64",
 )
 
 DEFAULT_CIBW_CACHE_PATH: Final[Path] = user_cache_path(appname="cibuildwheel", appauthor="pypa")
