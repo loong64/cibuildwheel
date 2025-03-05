@@ -34,6 +34,8 @@ if pm in {"x86_64", "ppc64le", "s390x"}:
     DEFAULT_IMAGE = DEFAULT_IMAGE_TEMPLATE.format(machine=pm)
 elif pm in {"aarch64", "arm64"}:
     DEFAULT_IMAGE = DEFAULT_IMAGE_TEMPLATE.format(machine="aarch64")
+elif pm in {"loongarch64", "loong64"}:
+    DEFAULT_IMAGE = DEFAULT_IMAGE_TEMPLATE.format(machine="loongarch64")
 else:
     DEFAULT_IMAGE = ""
 DEFAULT_OCI_PLATFORM = {
@@ -43,6 +45,7 @@ DEFAULT_OCI_PLATFORM = {
     "s390x": OCIPlatform.S390X,
     "aarch64": OCIPlatform.ARM64,
     "arm64": OCIPlatform.ARM64,
+    "loongarch64": OCIPlatform.LOONG64,
 }[pm]
 
 PODMAN = OCIContainerEngineConfig(name="podman")
@@ -599,6 +602,7 @@ def test_multiarch_image(container_engine, platform):
             OCIPlatform.AMD64: ("x86_64",),
             OCIPlatform.ARMV7: ("armv7l", "armv8l"),
             OCIPlatform.ARM64: ("aarch64",),
+            OCIPlatform.LOONG64: ("loongarch64",),
             OCIPlatform.PPC64LE: ("ppc64le",),
             OCIPlatform.S390X: ("s390x",),
         }
@@ -609,6 +613,7 @@ def test_multiarch_image(container_engine, platform):
             OCIPlatform.AMD64: "amd64",
             OCIPlatform.ARMV7: "armhf",
             OCIPlatform.ARM64: "arm64",
+            OCIPlatform.LOONG64: "loongarch64",
             OCIPlatform.PPC64LE: "ppc64el",
             OCIPlatform.S390X: "s390x",
         }

@@ -62,6 +62,8 @@ images = [
     PyPAImage("manylinux_2_28", "pypy_aarch64", None),
     # manylinux_2_31 images
     PyPAImage("manylinux_2_31", "armv7l", None),
+    # manylinux_2_38 images
+    PyPAImage("manylinux_2_38", "loongarch64", None),
     # manylinux_2_34 images
     PyPAImage("manylinux_2_34", "x86_64", None),
     PyPAImage("manylinux_2_34", "aarch64", None),
@@ -82,6 +84,7 @@ images = [
     PyPAImage("musllinux_1_2", "ppc64le", None),
     PyPAImage("musllinux_1_2", "s390x", None),
     PyPAImage("musllinux_1_2", "armv7l", None),
+    PyPAImage("musllinux_1_2", "loongarch64", None),
 ]
 
 config = configparser.ConfigParser()
