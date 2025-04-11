@@ -337,6 +337,11 @@
       "description": "Specify alternative manylinux / musllinux container images",
       "title": "CIBW_MANYLINUX_I686_IMAGE"
     },
+    "manylinux-loongarch64-image": {
+      "type": "string",
+      "description": "Specify alternative manylinux / musllinux container images",
+      "title": "CIBW_MANYLINUX_LOONGARCH64_IMAGE"
+    },
     "manylinux-ppc64le-image": {
       "type": "string",
       "description": "Specify alternative manylinux / musllinux container images",
@@ -381,6 +386,11 @@
       "type": "string",
       "description": "Specify alternative manylinux / musllinux container images",
       "title": "CIBW_MUSLLINUX_I686_IMAGE"
+    },
+    "musllinux-loongarch64-image": {
+      "type": "string",
+      "description": "Specify alternative manylinux / musllinux container images",
+      "title": "CIBW_MUSLLINUX_LOONGARCH64_IMAGE"
     },
     "musllinux-ppc64le-image": {
       "type": "string",
@@ -640,6 +650,9 @@
           "manylinux-i686-image": {
             "$ref": "#/properties/manylinux-i686-image"
           },
+          "manylinux-loongarch64-image": {
+            "$ref": "#/properties/manylinux-loongarch64-image"
+          },
           "manylinux-ppc64le-image": {
             "$ref": "#/properties/manylinux-ppc64le-image"
           },
@@ -666,6 +679,9 @@
           },
           "musllinux-i686-image": {
             "$ref": "#/properties/musllinux-i686-image"
+          },
+          "musllinux-loongarch64-image": {
+            "$ref": "#/properties/musllinux-loongarch64-image"
           },
           "musllinux-ppc64le-image": {
             "$ref": "#/properties/musllinux-ppc64le-image"
@@ -740,6 +756,9 @@
         "manylinux-i686-image": {
           "$ref": "#/properties/manylinux-i686-image"
         },
+        "manylinux-loongarch64-image": {
+          "$ref": "#/properties/manylinux-loongarch64-image"
+        },
         "manylinux-ppc64le-image": {
           "$ref": "#/properties/manylinux-ppc64le-image"
         },
@@ -766,6 +785,9 @@
         },
         "musllinux-i686-image": {
           "$ref": "#/properties/musllinux-i686-image"
+        },
+        "musllinux-loongarch64-image": {
+          "$ref": "#/properties/musllinux-loongarch64-image"
         },
         "musllinux-ppc64le-image": {
           "$ref": "#/properties/musllinux-ppc64le-image"
