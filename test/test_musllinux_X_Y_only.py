@@ -40,6 +40,7 @@ def test(musllinux_image, tmp_path):
         "CIBW_MUSLLINUX_X86_64_IMAGE": musllinux_image,
         "CIBW_MUSLLINUX_I686_IMAGE": musllinux_image,
         "CIBW_MUSLLINUX_AARCH64_IMAGE": musllinux_image,
+        "CIBW_MUSLLINUX_LOONGARCH64_IMAGE": musllinux_image,
         "CIBW_MUSLLINUX_PPC64LE_IMAGE": musllinux_image,
         "CIBW_MUSLLINUX_S390X_IMAGE": musllinux_image,
         "CIBW_MUSLLINUX_ARMV7L_IMAGE": musllinux_image,
