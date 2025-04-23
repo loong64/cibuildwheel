@@ -181,6 +181,7 @@ def test_archs_platform_all(platform, intercepted_build_args, monkeypatch):
             Architecture.ppc64le,
             Architecture.s390x,
             Architecture.armv7l,
+            Architecture.loongarch64,
         }
     elif platform == "windows":
         assert options.globals.architectures == {
