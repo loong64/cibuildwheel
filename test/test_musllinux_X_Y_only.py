@@ -44,6 +44,7 @@ def test(musllinux_image, tmp_path):
         "CIBW_MUSLLINUX_AARCH64_IMAGE": musllinux_image,
         "CIBW_MUSLLINUX_PPC64LE_IMAGE": musllinux_image,
         "CIBW_MUSLLINUX_S390X_IMAGE": musllinux_image,
+        "CIBW_MUSLLINUX_LOONGARCH64_IMAGE": musllinux_image,
     }
 
     actual_wheels = utils.cibuildwheel_run(project_dir, add_env=add_env, single_python=True)

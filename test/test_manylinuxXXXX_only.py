@@ -51,7 +51,7 @@ project_with_manylinux_symbols = test_projects.new_c_project(
 
 @pytest.mark.parametrize(
     "manylinux_image",
-    ["manylinux1", "manylinux2010", "manylinux2014", "manylinux_2_24", "manylinux_2_28"],
+    ["manylinux1", "manylinux2010", "manylinux2014", "manylinux_2_24", "manylinux_2_28", "manylinux_2_38"],
 )
 @pytest.mark.usefixtures("docker_cleanup")
 def test(manylinux_image, tmp_path):
@@ -78,6 +78,7 @@ def test(manylinux_image, tmp_path):
         "CIBW_MANYLINUX_AARCH64_IMAGE": manylinux_image,
         "CIBW_MANYLINUX_PPC64LE_IMAGE": manylinux_image,
         "CIBW_MANYLINUX_S390X_IMAGE": manylinux_image,
+        "CIBW_MANYLINUX_LOONGARCH64_IMAGE": manylinux_image,
         "CIBW_MANYLINUX_PYPY_AARCH64_IMAGE": manylinux_image,
         "CIBW_MANYLINUX_PYPY_I686_IMAGE": manylinux_image,
     }

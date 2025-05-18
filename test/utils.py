@@ -183,6 +183,8 @@ def expected_wheels(
                 "manylinux_2_17",
                 "manylinux2014",
             ]
+        elif machine_arch == "loongarch64":
+            manylinux_versions = ["manylinux_2_38"]
         else:
             manylinux_versions = ["manylinux_2_17", "manylinux2014"]
 

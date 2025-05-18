@@ -42,6 +42,7 @@ class OCIPlatform(Enum):
     ARM64 = "linux/arm64"
     PPC64LE = "linux/ppc64le"
     S390X = "linux/s390x"
+    LOONG64 = "linux/loong64"
 
 
 @dataclass(frozen=True)
