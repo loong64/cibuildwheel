@@ -255,6 +255,7 @@ def _expected_wheels(
             "i686": ["manylinux1", "manylinux2014", "manylinux_2_17", "manylinux_2_5"],
             "x86_64": ["manylinux1", "manylinux_2_28", "manylinux_2_5"],
             "riscv64": ["manylinux_2_31", "manylinux_2_35"],
+            "loongarch64": ["manylinux_2_38"],
         }.get(machine_arch, ["manylinux2014", "manylinux_2_17", "manylinux_2_28"])
 
     if musllinux_versions is None:
