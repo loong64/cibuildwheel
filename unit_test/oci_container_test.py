@@ -38,6 +38,7 @@ DEFAULT_OCI_PLATFORM = {
     "aarch64": OCIPlatform.ARM64,
     "arm64": OCIPlatform.ARM64,
     "ARM64": OCIPlatform.ARM64,
+    "loongarch64": OCIPlatform.LOONG64,
 }[pm]
 
 PODMAN = OCIContainerEngineConfig(name="podman")
@@ -597,6 +598,7 @@ def test_multiarch_image(container_engine, platform):
             OCIPlatform.AMD64: ("x86_64",),
             OCIPlatform.ARMV7: ("armv7l", "armv8l"),
             OCIPlatform.ARM64: ("aarch64",),
+            OCIPlatform.LOONG64: ("loongarch64",),
             OCIPlatform.PPC64LE: ("ppc64le",),
             OCIPlatform.RISCV64: ("riscv64",),
             OCIPlatform.S390X: ("s390x",),
@@ -608,6 +610,7 @@ def test_multiarch_image(container_engine, platform):
             OCIPlatform.AMD64: "amd64",
             OCIPlatform.ARMV7: "armhf",
             OCIPlatform.ARM64: "arm64",
+            OCIPlatform.LOONG64: "loong64",
             OCIPlatform.PPC64LE: "ppc64el",
             OCIPlatform.RISCV64: "riscv64",
             OCIPlatform.S390X: "s390x",

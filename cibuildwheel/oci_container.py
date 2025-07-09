@@ -32,6 +32,7 @@ class OCIPlatform(Enum):
     AMD64 = "linux/amd64"
     ARMV7 = "linux/arm/v7"
     ARM64 = "linux/arm64"
+    LOONG64 = "linux/loong64"
     PPC64LE = "linux/ppc64le"
     RISCV64 = "linux/riscv64"
     S390X = "linux/s390x"
