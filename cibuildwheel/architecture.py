@@ -61,6 +61,7 @@ class Architecture(StrEnum):
     s390x = auto()
     armv7l = auto()
     riscv64 = auto()
+    loongarch64 = auto()
 
     # mac archs
     universal2 = auto()
@@ -171,6 +172,7 @@ class Architecture(StrEnum):
                 Architecture.s390x,
                 Architecture.armv7l,
                 Architecture.riscv64,
+                Architecture.loongarch64,
             },
             "macos": {Architecture.x86_64, Architecture.arm64, Architecture.universal2},
             "windows": {Architecture.x86, Architecture.AMD64, Architecture.ARM64},
