@@ -149,6 +149,9 @@ properties:
   manylinux-i686-image:
     type: string
     description: Specify alternative manylinux / musllinux container images
+  manylinux-loongarch64-image:
+    type: string
+    description: Specify alternative manylinux / musllinux container images
   manylinux-ppc64le-image:
     type: string
     description: Specify alternative manylinux / musllinux container images
@@ -177,6 +180,9 @@ properties:
     type: string
     description: Specify alternative manylinux / musllinux container images
   musllinux-i686-image:
+    type: string
+    description: Specify alternative manylinux / musllinux container images
+  musllinux-loongarch64-image:
     type: string
     description: Specify alternative manylinux / musllinux container images
   musllinux-ppc64le-image:
