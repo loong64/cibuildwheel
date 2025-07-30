@@ -254,6 +254,7 @@ def _expected_wheels(
             "armv7l": ["manylinux2014", "manylinux_2_17", "manylinux_2_31"],
             "i686": ["manylinux1", "manylinux_2_28", "manylinux_2_5"],
             "x86_64": ["manylinux1", "manylinux_2_28", "manylinux_2_5"],
+            "loongarch64": ["manylinux_2_38"],
             "riscv64": ["manylinux_2_31", "manylinux_2_39"],
         }.get(machine_arch, ["manylinux2014", "manylinux_2_17", "manylinux_2_28"])
 
