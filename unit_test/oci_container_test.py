@@ -554,7 +554,7 @@ def test_local_image(
         # both GHA & local macOS arm64 podman desktop are failing
         pytest.xfail("podman fails with armv7l images")
 
-    remote_image = "debian:trixie-slim"
+    remote_image = "ghcr.io/loong64/debian:trixie-slim"
     platform_name = platform.value.replace("/", "_")
     local_image = f"cibw_{container_engine.name}_{platform_name}_local:latest"
     dockerfile = tmp_path / "Dockerfile"
@@ -583,7 +583,7 @@ def test_multiarch_image(container_engine: OCIContainerEngineConfig, platform: O
         # both GHA & local macOS arm64 podman desktop are failing
         pytest.xfail("podman fails with armv7l images")
     with OCIContainer(
-        engine=container_engine, image="debian:trixie-slim", oci_platform=platform
+        engine=container_engine, image="ghcr.io/loong64/debian:trixie-slim", oci_platform=platform
     ) as container:
         output = container.call(["uname", "-m"], capture_output=True)
         output_map_kernel = {
@@ -591,6 +591,7 @@ def test_multiarch_image(container_engine: OCIContainerEngineConfig, platform: O
             OCIPlatform.AMD64: ("x86_64",),
             OCIPlatform.ARMV7: ("armv7l", "armv8l"),
             OCIPlatform.ARM64: ("aarch64",),
+            OCIPlatform.LOONG64: ("loongarch64",),
             OCIPlatform.PPC64LE: ("ppc64le",),
             OCIPlatform.RISCV64: ("riscv64",),
             OCIPlatform.S390X: ("s390x",),
@@ -602,6 +603,7 @@ def test_multiarch_image(container_engine: OCIContainerEngineConfig, platform: O
             OCIPlatform.AMD64: "amd64",
             OCIPlatform.ARMV7: "armhf",
             OCIPlatform.ARM64: "arm64",
+            OCIPlatform.LOONG64: "loong64",
             OCIPlatform.PPC64LE: "ppc64el",
             OCIPlatform.RISCV64: "riscv64",
             OCIPlatform.S390X: "s390x",
